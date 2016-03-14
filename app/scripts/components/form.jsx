@@ -6,8 +6,21 @@ var Backbone = require('backbone');
 require('backbone-react-component');
 
 
+
 var formTemplate = React.createClass({
   mixins: [Backbone.React.Component.mixin],
+  handleClick: function(e){
+    e.preventDefault();
+    console.log('click');
+    var formData = {
+      name: $('#title').val(),
+      url: $('#url').val(),
+      caption: $('#caption').val()
+    }
+    console.log(formData);
+    console.log(this.props);
+    this.props.collection.create(formData);
+    },
   render: function(){
     return (
       <form role="form">
@@ -24,8 +37,8 @@ var formTemplate = React.createClass({
           <textarea className="form-control" rows="5" id="caption"></textarea>
         </div>
         <div className="form-group add-buttons-container">
-          <button type="submit" className="btn btn-default">Cancel</button>
-          <button type="submit" className="btn btn-success">Add Photo</button>
+          <button type="submit" className="btn btn-default cancel-button">Cancel</button>
+          <button type="submit" onClick={this.handleClick} className="btn btn-success add-button">Add Photo</button>
         </div>
       </form>
     )

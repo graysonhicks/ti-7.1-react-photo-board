@@ -5,6 +5,7 @@ var _ = require('underscore');
 var Backbone = require('backbone');
 require('backbone-react-component');
 
+var navBarComponent = require('./components/navbar.jsx')
 var formComponents = require('./components/form.jsx');
 var feedComponents = require('./components/feed.jsx');
 var models = require('./models/models.js');
@@ -12,7 +13,7 @@ var models = require('./models/models.js');
 var photos = new models.PhotosCollection();
 var PhotosList = feedComponents.PhotosList;
 var FormTemplate = formComponents.formTemplate;
-
+var NavBar = navBarComponent.NavBar;
 console.log(photos);
 console.log(PhotosList);
 
@@ -43,6 +44,11 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <FormTemplate />,
+  <FormTemplate collection={photos}/>,
   $('.add-container')[0]
+);
+
+ReactDOM.render(
+  <NavBar />,
+  $('.navbar')[0]
 );
