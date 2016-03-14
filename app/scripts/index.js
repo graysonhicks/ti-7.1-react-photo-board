@@ -10,11 +10,11 @@ var feedComponents = require('./components/feed.jsx');
 var models = require('./models/models.js');
 
 var photos = new models.PhotosCollection();
-var photosList = feedComponents.photosList;
-var formTemplate = formComponents.formTemplate;
+var PhotosList = feedComponents.PhotosList;
+var FormTemplate = formComponents.formTemplate;
 
 console.log(photos);
-console.log(photosList);
+console.log(PhotosList);
 
 
 photos.add([
@@ -35,15 +35,14 @@ photos.add([
   },
 ]);
 
-photos.fetch();
+// photos.fetch();
 
 ReactDOM.render(
-  <photosList collection={photos}/>,
+  <PhotosList collection={photos}/>,
   $('.img-feed-container')[0]
 );
 
-
 ReactDOM.render(
-  <formTemplate />,
+  <FormTemplate />,
   $('.add-container')[0]
 );

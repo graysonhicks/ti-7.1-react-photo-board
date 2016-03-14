@@ -11,16 +11,16 @@ var formTemplate = React.createClass({
   render: function(){
     return (
       <form role="form">
-        <div class="form-group">
-          <label htmlfor="title">Title:</label>
+        <div className="form-group">
+          <label htmlFor="title">Title:</label>
           <input type="text" className="form-control" id="title" />
         </div>
-        <div class="form-group">
-          <label htmlfor="url">URL:</label>
+        <div className="form-group">
+          <label htmlFor="url">URL:</label>
           <input type="text" className="form-control" id="url" />
         </div>
-        <div class="form-group">
-          <label htmlfor="comment">Caption:</label>
+        <div className="form-group">
+          <label htmlFor="comment">Caption:</label>
           <textarea className="form-control" rows="5" id="caption"></textarea>
         </div>
         <div className="form-group add-buttons-container">

@@ -7,14 +7,14 @@ require('backbone-react-component');
 
 var models = require('../models/models.js');
 
-var photoItem = React.createClass({
+var PhotoItem = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   render: function(){
     console.log('photos item');
     return (
       <div className="thumbnail img-container">
         <img src={this.props.model.get("url")} />
-        <div class="caption">
+        <div className="caption">
           <p className="thumbnail-caption-text">{this.props.model.get("caption")}</p>
           <p className="button-container"><a href="#" className="btn btn-primary" role="button"><i className="fa fa-facebook-square"></i></a> <a href="#" className="btn btn-default" role="button"><i className="fa fa-instagram"></i></a></p>
         </div>
@@ -23,15 +23,15 @@ var photoItem = React.createClass({
   }
 });
 
-console.log('feedjsx test', photoItem);
+console.log('feedjsx test', PhotoItem);
 
-var photosList = React.createClass({
+var PhotosList = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   render: function(){
     console.log('photolist render');
     var feed = this.props.collection.map(function(model){
       return (
-        <photoItem
+        <PhotoItem
           model={model}
           key={model.get('name')}
         /> // these set a model proprty on each instance with backbone model
@@ -45,12 +45,12 @@ var photosList = React.createClass({
   }
 });
 
-//handleSubmit: function(e){
+//h andleSubmit: function(e){
 //      var formData = $(e.currentTarget).serializeObject();
 //      this.props.collection.create(formData);
 //    }
 
 module.exports = {
-  photoItem: photoItem,
-  photosList: photosList
+  PhotoItem: PhotoItem,
+  PhotosList: PhotosList
 }
