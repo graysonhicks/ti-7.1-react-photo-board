@@ -25,14 +25,15 @@ var PhotoItem = React.createClass({
         <img src={this.props.model.get("url")} />
         <div className="caption">
           <p className="thumbnail-caption-text">{this.props.model.get("caption")}</p>
-          <p className="button-container"><a href="#" onClick={this.handleButton} className="btn btn-primary" role="button"><i className="fa fa-facebook-square"></i></a> <a href="#" onClick={this.handleButton} className="btn btn-default" role="button"><i className="fa fa-instagram"></i></a></p>
+          <p className="button-container">
+            
+          </p>
         </div>
       </div>
     )
   }
 });
 
-console.log('feedjsx test', PhotoItem);
 
 var PhotosList = React.createClass({
   mixins: [Backbone.React.Component.mixin],
@@ -47,7 +48,7 @@ var PhotosList = React.createClass({
       );
     });
     return (
-      <div className="col-md-8 col-md-offset-2 img-feed">
+      <div className="col-md-12 img-feed">
         {feed}
       </div>
     )

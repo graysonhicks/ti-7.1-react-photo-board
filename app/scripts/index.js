@@ -23,31 +23,38 @@ buttons.add([
   {
     name: "facebook",
     tag: "likes",
-    likes: 0
+    likes: 0,
+    css: "fa fa-thumbs-o-up thumb-up"
   },
   {
     name: "instagram",
     tag: "likes",
-    likes: 0
+    likes: 0,
+    css: "fa fa-heart"
   }
 ])
 
 photos.add([
   {
     name: "first",
-    url: "http://unsplash.it/600",
+    url: "http://unsplash.it/400",
     caption: "test"
   },
   {
     name: "second",
-    url: "http://unsplash.it/600",
+    url: "http://unsplash.it/400",
     caption: "test2"
   },
   {
     name: "third",
-    url: "http://unsplash.it/600",
+    url: "http://unsplash.it/400",
     caption: "test3"
   },
+  {
+    name: "fourth",
+    url: "http://unsplash.it/400",
+    caption: "test4"
+  }
 ]);
 
 // photos.fetch();
@@ -62,10 +69,10 @@ ReactDOM.render(
   $('.add-container')[0]
 );
 
-// ReactDOM.render(
-//   <ButtonsListComponent collection={buttons}/>,
-//   $('.button-container')[0]
-// );
+ReactDOM.render(
+  <ButtonsListComponent collection={buttons}/>,
+  $('.button-container')[0]
+);
 
 ReactDOM.render(
   <NavBar />,
