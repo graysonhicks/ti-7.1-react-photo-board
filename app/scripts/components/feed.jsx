@@ -9,6 +9,9 @@ var models = require('../models/models.js');
 
 var PhotoItem = React.createClass({
   mixins: [Backbone.React.Component.mixin],
+  handleButton: function(e){
+    e.preventDefault();
+  },
   render: function(){
     console.log('photos item');
     return (
@@ -16,7 +19,7 @@ var PhotoItem = React.createClass({
         <img src={this.props.model.get("url")} />
         <div className="caption">
           <p className="thumbnail-caption-text">{this.props.model.get("caption")}</p>
-          <p className="button-container"><a href="#" className="btn btn-primary" role="button"><i className="fa fa-facebook-square"></i></a> <a href="#" className="btn btn-default" role="button"><i className="fa fa-instagram"></i></a></p>
+          <p className="button-container"><a href="#" onClick={this.handleButton} className="btn btn-primary" role="button"><i className="fa fa-facebook-square"></i></a> <a href="#" onClick={this.handleButton} className="btn btn-default" role="button"><i className="fa fa-instagram"></i></a></p>
         </div>
       </div>
     )

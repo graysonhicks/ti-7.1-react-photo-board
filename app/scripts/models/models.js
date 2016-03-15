@@ -7,6 +7,18 @@ var PhotosCollection = Backbone.Collection.extend({
 
 var PhotoModel = Backbone.Model.extend({});
 
+var ButtonModel = Backbone.Model.extend({
+  defaults: {
+    likes: 0,
+    tag: "Likes"
+  }
+});
+
+var ButtonCollection = Backbone.Collection.extend({
+  model: ButtonModel
+});
+
 module.exports = {
+  ButtonCollection: ButtonCollection,
   PhotosCollection: PhotosCollection
 };
