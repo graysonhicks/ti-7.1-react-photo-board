@@ -11,6 +11,12 @@ var PhotoItem = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   handleButton: function(e){
     e.preventDefault();
+    // var currentText = $(e.currentTarget).text();
+    // var likes = $(e.currentTarget);
+    // var counter;
+    // var counter =+ 1;
+    // likes.text(counter);
+    // return likes;
   },
   render: function(){
     console.log('photos item');
@@ -48,10 +54,6 @@ var PhotosList = React.createClass({
   }
 });
 
-//h andleSubmit: function(e){
-//      var formData = $(e.currentTarget).serializeObject();
-//      this.props.collection.create(formData);
-//    }
 
 module.exports = {
   PhotoItem: PhotoItem,
