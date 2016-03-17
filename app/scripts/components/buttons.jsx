@@ -5,11 +5,11 @@ var _ = require('underscore');
 var Backbone = require('backbone');
 require('backbone-react-component');
 
-var ButtonComponentList = React.createClass({
-    mixins: [Backbone.React.Component.mixin],
-    render: function(){
-      var buttonsList = this.props.collection.map(function(model){
-        return (
+var ButtonComponentList = React.createClass({ // creates list component
+    mixins: [Backbone.React.Component.mixin], // backbone mixin for auto listening to models and collections
+    render: function(){ // all components have render function with return of HTML
+      var buttonsList = this.props.collection.map(function(model){ //maps over collection of buttons
+        return ( // for each button, it runs the render of the ind. button component
           <ButtonComponent
             model={model}
             key={model.get('name')}
@@ -17,7 +17,7 @@ var ButtonComponentList = React.createClass({
         );
       });
       return (
-        <p className="buttons-p">{buttonsList}</p>
+        <p className="buttons-p">{buttonsList}</p>  // this is the return from render, it returns the built list in a html element
       )
     }
 });
@@ -25,7 +25,7 @@ var ButtonComponentList = React.createClass({
 var ButtonComponent = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   clickHandle: function(e){
-    $(e.currentTarget).addClass("clicked");
+    $(e.currentTarget).addClass("clicked"); // click handler calls other functions
     this.increaseLikes();
     this.tagSet();
   },

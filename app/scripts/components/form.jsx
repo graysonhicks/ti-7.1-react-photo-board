@@ -10,16 +10,13 @@ require('backbone-react-component');
 var formTemplate = React.createClass({
   mixins: [Backbone.React.Component.mixin],
   handleClick: function(e){
-    e.preventDefault();
-    console.log('click');
+    e.preventDefault(); // on click, prevent default
     var formData = {
-      name: $('#title').val(),
+      name: $('#title').val(), // get values from form and store in object
       url: $('#url').val(),
       caption: $('#caption').val()
     }
-    console.log(formData);
-    console.log(this.props);
-    this.props.collection.create(formData);
+    this.props.collection.create(formData); //pass that object in and create on server
     },
   render: function(){
     return (
@@ -46,7 +43,6 @@ var formTemplate = React.createClass({
 });
 
 // add onClick attr on button and call this.FUNCTION with function being a method on that object
-console.log('formjsx test', formTemplate);
 
 module.exports = {
   formTemplate: formTemplate

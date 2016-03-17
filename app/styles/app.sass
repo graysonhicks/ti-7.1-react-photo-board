@@ -5,7 +5,6 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/'
 // Import Bootstrap
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap'
 
-
 *,
 *::before,
 *::after
@@ -53,6 +52,10 @@ img
 .thumbnail-caption-text
   text-align: center
   margin-bottom: 0px
+  max-width: 400px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
 
 .button-container
   text-align: right
